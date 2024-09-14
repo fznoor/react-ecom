@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+// 1rem is equal to 10px 
+body {
+    font-size: 1.6rem;
+}
+
+// responsive 
+// media query screen down to 600px
+@media(max-width:900px) {
+    html {
+        font-size: 55%;
+    }
+}
