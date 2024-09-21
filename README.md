@@ -1,5 +1,13 @@
 ## Run Locally
 
+Clone the project
+
+```bash
+  git clone https://github.com/fznoor/react-ecom.git
+```
+
+Go to the project directory
+
 ```bash
   cd react-movie
 ```
