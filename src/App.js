@@ -4,6 +4,7 @@ import './App.scss'
 // components 
 import Header from './component/Header'
 // pages 
+
 import Home from './pages/Home'
 import SingleProduct from './pages/SingleProduct'
 import Cart from './pages/Cart'

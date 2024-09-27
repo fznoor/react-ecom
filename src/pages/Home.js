@@ -1,14 +1,15 @@
 import React from 'react'
 import ProductList from '../component/ProductList'
-import { useGlobalContext } from '../context/context'
+import { fetchProduct } from '../redux/product/product_action'
+import { useSelector } from 'react-redux'
 
 function Home() {
-    const { product, getProduct } = useGlobalContext()
+    const { product } = useSelector(state => state.productReducer)
 
     return (
         <>
             <ProductList
-                getProduct={getProduct}
+                fetchProduct={fetchProduct}
                 product={product}
             />
         </>

@@ -1,11 +1,13 @@
 import React, { memo, useEffect } from 'react'
 import './ProductList.scss'
 import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
-function ProductList({ product, getProduct }) {
+function ProductList({ fetchProduct, product }) {
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        getProduct('https://fakestoreapi.com/products')
+        dispatch(fetchProduct('https://fakestoreapi.com/products'))
     }, [])
 
     return (
@@ -30,7 +32,7 @@ function ProductList({ product, getProduct }) {
                         </NavLink>
                     )
                 })}
-            </div >
+            </div>
         </>
     )
 }

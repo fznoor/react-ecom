@@ -2,10 +2,14 @@ import React, { memo, useEffect } from 'react'
 import './CartItem.scss'
 import { NavLink } from 'react-router-dom'
 import { FaArrowLeft, FaTrash } from 'react-icons/fa6'
+import { useDispatch } from 'react-redux'
 
-function CartItem({ cart, setDecrement, setIncrement, removeCart, dispatch, sub_total, shipping_fee }) {
+function CartItem({ cart, setDecrement, setIncrement, removeCart, sub_total, shipping_fee }) {
+    const dispatch = useDispatch()
+
+    // change SubTotal on every cart render 
     useEffect(() => {
-        dispatch({ type: 'SET_TOTAL_PRICE' })
+        dispatch({ type: 'SET_SUB_TOTAL' })
     }, [cart])
 
     return (
@@ -26,12 +30,12 @@ function CartItem({ cart, setDecrement, setIncrement, removeCart, dispatch, sub_
                             <div className="cartItem">
                                 <img src={image} alt={name} />
                                 <span>
-                                    <button onClick={() => setDecrement(id)}>-</button>
+                                    <button onClick={() => dispatch(setDecrement(id))}>-</button>
                                     <input value={quantity} />
-                                    <button onClick={() => setIncrement(id)}>+</button>
+                                    <button onClick={() => dispatch(setIncrement(id))}>+</button>
                                 </span>
                                 <p>${price * quantity}</p>
-                                <button className='removeBtn' onClick={() => removeCart(id)}>
+                                <button className='removeBtn' onClick={() => dispatch(removeCart(id))}>
                                     <FaTrash />
                                 </button>
                             </div>
