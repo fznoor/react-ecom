@@ -1,7 +1,9 @@
 import { applyMiddleware, legacy_createStore as createStore } from "redux"
-import rootReducer from './rootReducer'
 import { thunk } from "redux-thunk"
+import persistStore from "redux-persist/es/persistStore"
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
+import rootReducer from './rootReducer'
 
-export default store
+export const store = createStore(rootReducer, applyMiddleware(thunk))
+
+export const persistor = persistStore(store)
