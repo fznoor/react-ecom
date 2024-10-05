@@ -21,26 +21,30 @@ export const fetchSingleProduct = (url) => {
 }
 
 export const addToCart = (id, image, price, title, description, quantity) => {
-    return async (dispatch) => {
-        dispatch({ type: 'SET_ADD_TO_CART', payload: { id, image, price, title, description, quantity } })
+    return {
+        type: 'SET_ADD_TO_CART',
+        payload: { id, image, price, title, description, quantity }
     }
 }
 
 // handle cart count 
 export const setDecrement = (id) => {
-    return async (dispatch) => {
-        dispatch({ type: 'SET_DECREMENT', payload: id })
+    return {
+        type: 'SET_DECREMENT',
+        payload: id
     }
 }
 export const setIncrement = (id) => {
-    return async (dispatch) => {
-        dispatch({ type: 'SET_INCREMENT', payload: id })
+    return {
+        type: 'SET_INCREMENT',
+        payload: id
     }
 }
 
 // handle remove cart 
 export const removeCart = (id) => {
-    return async (dispatch) => {
-        dispatch({ type: 'SET_REMOVE_CART', payload: id })
+    return {
+        type: 'SET_REMOVE_CART',
+        payload: id
     }
 }
