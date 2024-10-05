@@ -8,10 +8,6 @@ export const fetchProduct = (API_URL) => {
     }
 }
 
-export const filterProduct = (curCat) => {
-    dispatch({ type: 'SET_FILTER_PRODUCT', payload: curCat })
-}
-
 export const fetchSingleProduct = (url) => {
     return async (dispatch) => {
         let res = await axios.get(url)
